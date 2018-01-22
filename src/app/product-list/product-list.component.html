@@ -1,0 +1,48 @@
+<div class="product-list">
+  <div>
+    <label for="filter-product-string">Filter by: </label>
+    <input id="filter-product-string" [(ngModel)]="productListFilter" />
+  </div>
+  <table class="product-list-table" *ngIf="products && products.length">
+    <thead>
+      <tr>
+        <th>
+          Product Image
+        </th>
+        <th>
+          Product SKU
+        </th>
+        <th>
+          Product Name
+        </th>
+        <th>
+          Product Price
+        </th>
+        <th>
+          Product Rating
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>
+          <button type="image" (click)="enlargeImage(product)">
+            <img [ngClass]="{'enlarged': product.enlargedImage}" [src]="product.imageUrl" [alt]="product.name" />
+          </button>
+        </td>
+        <td>
+          {{product.sku}}
+        </td>
+        <td>
+          {{product.name}}
+        </td>
+        <td class="currency">
+          {{product.price | currency}}
+        </td>
+        <td>
+          {{product.rating}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
