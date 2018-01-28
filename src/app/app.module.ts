@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 
+import { HikesModule } from './hikes/hikes.module';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HikesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

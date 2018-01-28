@@ -6,6 +6,6 @@ export interface Hike {
     distance: number; // in miles
     elevationGain: number; // in feet
     routeType: string; // out-and-back, loop, point-to-point
-    starRating: number;
+    rating  : number;
     imageUrl: string;
 }

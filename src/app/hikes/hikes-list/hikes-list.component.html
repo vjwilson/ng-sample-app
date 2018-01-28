@@ -1,0 +1,61 @@
+<div class="hike-list">
+  <h2>Hiking Trails</h2>
+  <table class="hike-list-table" *ngIf="hikes && hikes.length">
+    <thead>
+      <tr>
+        <th>
+          Trail Image
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Difficulty
+        </th>
+        <th>
+          Distance (miles)
+        </th>
+        <th>
+          Elevation Gain (feet)
+        </th>
+        <th>
+          Route Type
+        </th>
+        <th>
+          Rating
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hike of hikes">
+        <td>
+          <img [src]="hike.imageUrl" [alt]="hike.name" />
+        </td>
+        <td>
+          {{hike.name}}
+        </td>
+        <td>
+          {{hike.description}}
+        </td>
+        <td>
+          {{hike.difficultyLevel}}
+        </td>
+        <td>
+          {{hike.distance}}
+        </td>
+        <td>
+          {{hike.elevationGain}}
+        </td>
+        <td>
+          {{hike.routeType}}
+        </td>
+        <td>
+          {{hike.rating}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

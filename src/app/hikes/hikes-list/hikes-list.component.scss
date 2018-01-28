@@ -1,0 +1,28 @@
+.hike-list {
+  margin: 1em auto;
+  max-width: 1200px;
+}
+
+.hike-list-table {
+  border: collapse;
+  width: 100%;
+
+  th {
+    background-color: #666;
+    color: #fff;
+    padding: 1em 2em;
+  }
+
+  td {
+    padding: 1em 2em;
+  }
+
+  button {
+    background: none;
+  }
+
+  img {
+    height: auto;
+    max-width: 100px;
+  }
+}
