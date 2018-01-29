@@ -17,8 +17,24 @@
     padding: 1em;
   }
 
+  .important-column {
+    min-width: 240px;
+  }
+
+  .badge-column {
+    text-align: center;
+
+    .badge {
+      background-color: #666;
+      border: 1px solid #333;
+      border-radius: 4px;
+      color: #fff;
+      padding: .25em;
+    }
+  }
+
   .star-column {
-    min-width: 116px;
+    min-width: 150px;
     text-align: center;
   }
 
