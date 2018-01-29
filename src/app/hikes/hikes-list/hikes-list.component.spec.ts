@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { StarComponent } from '../../shared/star/star.component';
+import { HikesService } from '../hikes.service';
 
 import { HikesListComponent } from './hikes-list.component';
 
@@ -8,7 +10,11 @@ describe('HikesListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HikesListComponent ]
+      declarations: [
+        HikesListComponent,
+        StarComponent,
+      ],
+      providers: [HikesService],
     })
     .compileComponents();
   }));

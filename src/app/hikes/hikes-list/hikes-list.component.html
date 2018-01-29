@@ -13,7 +13,7 @@
           Difficulty
         </th>
         <th>
-          Distance (miles)
+          Distance
         </th>
         <th>
           Elevation Gain (feet)
@@ -38,7 +38,7 @@
           <span class="badge">{{hike.difficultyLevel}}</span>
         </td>
         <td>
-          {{hike.distance}}
+          {{hike.distance | appendMiles}}
         </td>
         <td>
           {{hike.elevationGain}}
