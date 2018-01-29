@@ -52,7 +52,8 @@
         <td>
           {{hike.routeType}}
         </td>
-        <td>
+        <td class="star-column">
+          <app-star [rating]="hike.rating"></app-star>
           {{hike.rating}}
         </td>
       </tr>

@@ -9,6 +9,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 
 import { HikesModule } from './hikes/hikes.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HikesModule } from './hikes/hikes.module';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HikesModule
+    HikesModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
