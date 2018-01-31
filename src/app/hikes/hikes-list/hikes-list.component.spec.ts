@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StarComponent } from '../../shared/star/star.component';
-import { AppendMilesPipe } from '../../shared//append-miles.pipe';
+import { AppendMilesPipe } from '../../shared/append-miles.pipe';
 import { HikesService } from '../hikes.service';
 
 import { HikesListComponent } from './hikes-list.component';
