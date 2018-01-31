@@ -1,7 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
-import { ProductListComponent } from './product-list/product-list.component';
 import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,7 +10,6 @@ describe('AppComponent', () => {
         FormsModule
       ],
       declarations: [
-        ProductListComponent,
         AppComponent
       ],
     }).compileComponents();
