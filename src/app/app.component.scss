@@ -1,3 +1,13 @@
+html {
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 .layout {
   text-align: center;
 }

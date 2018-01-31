@@ -1,0 +1,49 @@
+.hike-list {
+  margin: 1em auto;
+  max-width: 1200px;
+}
+
+.hike-list-table {
+  border: collapse;
+  width: 100%;
+
+  th {
+    background-color: #666;
+    color: #fff;
+    padding: 1em 2em;
+  }
+
+  td {
+    padding: 1em;
+  }
+
+  .important-column {
+    min-width: 240px;
+  }
+
+  .badge-column {
+    text-align: center;
+
+    .badge {
+      background-color: #666;
+      border: 1px solid #333;
+      border-radius: 4px;
+      color: #fff;
+      padding: .25em;
+    }
+  }
+
+  .star-column {
+    min-width: 150px;
+    text-align: center;
+  }
+
+  button {
+    background: none;
+  }
+
+  img {
+    height: auto;
+    max-width: 100px;
+  }
+}
