@@ -9,10 +9,35 @@ html {
 }
 
 .layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   text-align: center;
+
+  &-header {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.navbar {
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+
+    a:link,
+    a:visited {
+      background-color: #666;
+      color: #fff;
+      margin: .5em;
+      padding: .5em 1em;
+      text-decoration: none;
+    }
+  }
 }
 
 .sitelogo {
   height: auto;
+  margin: 0 1em;
   width: 32px;
 }
