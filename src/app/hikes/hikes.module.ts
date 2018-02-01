@@ -6,6 +6,7 @@ import { HikesRoutingModule } from './hikes-routing.module';
 import { HikesListComponent } from './hikes-list/hikes-list.component';
 
 import { HikesService } from './hikes.service';
+import { HikesFormComponent } from './hikes-form/hikes-form.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { HikesService } from './hikes.service';
   ],
   declarations: [
     HikesListComponent,
+    HikesFormComponent,
   ],
   providers: [HikesService],
 })
