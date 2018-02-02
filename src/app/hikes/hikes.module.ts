@@ -7,6 +7,7 @@ import { HikesListComponent } from './hikes-list/hikes-list.component';
 
 import { HikesService } from './hikes.service';
 import { HikesFormComponent } from './hikes-form/hikes-form.component';
+import { HikesComponent } from './hikes/hikes.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { HikesFormComponent } from './hikes-form/hikes-form.component';
   declarations: [
     HikesListComponent,
     HikesFormComponent,
+    HikesComponent,
   ],
   providers: [HikesService],
 })
