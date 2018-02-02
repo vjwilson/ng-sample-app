@@ -7,6 +7,11 @@
   border: collapse;
   width: 100%;
 
+  .hike-row:hover {
+    background-color: #eee;
+    cursor: pointer,
+  }
+
   th {
     background-color: #666;
     color: #fff;

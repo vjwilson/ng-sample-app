@@ -1,15 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ActivatedRoute } from '@angular/router';
 
-import { StarComponent } from '../../shared/star/star.component';
 import { AppendMilesPipe } from '../../shared/append-miles.pipe';
+import { StarComponent } from '../../shared/star/star.component';
 import { HikesService } from '../hikes.service';
 
-import { HikesListComponent } from './hikes-list.component';
+import { HikeDetailComponent } from './hike-detail.component';
 
-describe('HikesListComponent', () => {
-  let component: HikesListComponent;
-  let fixture: ComponentFixture<HikesListComponent>;
+describe('HikeDetailComponent', () => {
+  let component: HikeDetailComponent;
+  let fixture: ComponentFixture<HikeDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -17,17 +18,24 @@ describe('HikesListComponent', () => {
         RouterTestingModule,
       ],
       declarations: [
-        HikesListComponent,
+        HikeDetailComponent,
         StarComponent,
         AppendMilesPipe,
       ],
-      providers: [HikesService],
+      providers: [
+        HikesService,
+        {
+          provide: ActivatedRoute, useValue: {
+            params: {id: 3},
+          },
+        },
+      ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HikesListComponent);
+    fixture = TestBed.createComponent(HikeDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -35,11 +43,4 @@ describe('HikesListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should render title in a h2 tag', async(() => {
-    const fixture = TestBed.createComponent(HikesListComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h2').textContent).toContain('Hiking Trails');
-  }));
 });

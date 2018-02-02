@@ -27,7 +27,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let hike of hikes">
+      <tr class="hike-row" *ngFor="let hike of hikes" (click)="onRowClick(hike)">
         <td>
           <img [src]="hike.imageUrl" [alt]="hike.name" />
         </td>

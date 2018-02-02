@@ -1,0 +1,43 @@
+<div class="hike-detail"  *ngIf="hike && hike.id">
+  <div class="hike-detail-main">
+     <h2>{{hike.name}}</h2>
+    <div class="hike-stats">
+      <div>
+        <span class="stat-label">Difficulty</span>
+        <span class="badge">
+          {{hike.difficultyLevel}}
+        </span>
+      </div>
+      <div>
+        <span class="stat-label">Distance</span>
+        <span>
+          {{hike.distance | appendMiles}}
+        </span>
+      </div>
+      <div>
+        <span class="stat-label">Elevation Gain</span>
+        <span>
+          {{hike.elevationGain}}
+        </span>
+      </div>
+      <div>
+        <span class="stat-label">Route Type</span>
+        <span>
+          {{hike.routeType}}
+        </span>
+      </div>
+      <div>
+        <span class="stat-label">Rating</span>
+        <span class="star-column">
+          <app-star [rating]="hike.rating"></app-star>
+          {{hike.rating}}
+        </span>
+      </div>
+    </div>
+    <p>{{hike.description}}</p>
+    <button class="back-button" (click)="onBack()" type="button">Back to Hikes</button>
+  </div>
+  <div class="hike-detail-sidebar">
+    <img class="hike-detail-image" [src]="hike.imageUrl" [alt]="hike.name" />
+  </div>
+</div>

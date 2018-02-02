@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Hike } from '../hike';
 import { HikesService } from '../hikes.service';
@@ -11,10 +12,16 @@ import { HikesService } from '../hikes.service';
 export class HikesListComponent implements OnInit {
   hikes: Hike[] = [];
 
-  constructor(private hikesService: HikesService) { }
+  constructor(
+    private router: Router,
+    private hikesService: HikesService,
+  ){ }
 
   ngOnInit() {
     this.hikes = this.hikesService.getHikes();
   }
 
+  onRowClick(hike): void {
+    this.router.navigate(['/hikes', hike.id]);
+  }
 }

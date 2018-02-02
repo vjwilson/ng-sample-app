@@ -1,0 +1,43 @@
+.hike-detail-main {
+  grid-area: main;
+}
+
+.hike-detail-sidebar {
+  grid-area: sidebar;
+}
+
+.hike-detail-image {
+  height: auto;
+  max-width: 320px;
+}
+
+.hike-detail {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 320px 1fr;
+  grid-template-areas:
+    "sidebar main";
+  text-align: left;
+}
+
+.hike-stats {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  .stat-label {
+    color: #999;
+    display: block;
+    text-transform: uppercase;
+  }
+}
+
+.back-button {
+  background-color: inherit;
+  border: 1px solid #666;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: .85em;
+  padding: .5em 1em;
+}
