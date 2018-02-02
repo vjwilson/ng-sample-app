@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 import { AppendMilesPipe } from '../../shared/append-miles.pipe';
 import { StarComponent } from '../../shared/star/star.component';
@@ -26,7 +28,7 @@ describe('HikeDetailComponent', () => {
         HikesService,
         {
           provide: ActivatedRoute, useValue: {
-            params: {id: 3},
+            paramMap: Observable.of({ get: (id) => '3' }),
           },
         },
       ],
