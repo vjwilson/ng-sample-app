@@ -1,14 +1,14 @@
 import { AppPage } from './app.po';
 
-describe('ng-test01202018 App', () => {
+describe('NG Sample App', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display site name', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('Cardinal Trails App');
   });
 });
