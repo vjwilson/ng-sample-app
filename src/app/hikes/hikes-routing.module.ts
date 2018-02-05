@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HikesComponent } from './hikes/hikes.component';
 import { HikesListComponent } from './hikes-list/hikes-list.component';
-import { HikesFormComponent } from './hikes-form/hikes-form.component';
+import { HikeFormComponent } from './hike-form/hike-form.component';
 import { HikeDetailComponent } from './hike-detail/hike-detail.component';
 
 const routes: Routes = [
@@ -17,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'new',
-        component: HikesFormComponent
+        component: HikeFormComponent
       },
       {
         path: ':id',
@@ -25,7 +25,7 @@ const routes: Routes = [
       },
       {
         path: ':id/edit',
-        component: HikesFormComponent
+        component: HikeFormComponent
       }
     ]
   },

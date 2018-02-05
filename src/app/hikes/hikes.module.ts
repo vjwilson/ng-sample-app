@@ -6,7 +6,7 @@ import { HikesRoutingModule } from './hikes-routing.module';
 import { HikesListComponent } from './hikes-list/hikes-list.component';
 
 import { HikesService } from './hikes.service';
-import { HikesFormComponent } from './hikes-form/hikes-form.component';
+import { HikeFormComponent } from './hike-form/hike-form.component';
 import { HikesComponent } from './hikes/hikes.component';
 import { HikeDetailComponent } from './hike-detail/hike-detail.component';
 
@@ -18,7 +18,7 @@ import { HikeDetailComponent } from './hike-detail/hike-detail.component';
   ],
   declarations: [
     HikesListComponent,
-    HikesFormComponent,
+    HikeFormComponent,
     HikesComponent,
     HikeDetailComponent,
   ],

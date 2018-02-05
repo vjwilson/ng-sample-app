@@ -4,11 +4,11 @@ import { Hike } from '../hike';
 import { HikesService } from '../hikes.service';
 
 @Component({
-  selector: 'app-hikes-form',
-  templateUrl: './hikes-form.component.html',
-  styleUrls: ['./hikes-form.component.scss']
+  selector: 'app-hike-form',
+  templateUrl: './hike-form.component.html',
+  styleUrls: ['./hike-form.component.scss']
 })
-export class HikesFormComponent implements OnInit {
+export class HikeFormComponent implements OnInit {
   id: any;
   hike: Hike;
 
