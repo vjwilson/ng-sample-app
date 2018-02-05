@@ -1,7 +1,20 @@
 .button {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: .85em;
+  padding: .5em 1em;
+  text-decoration: none;
+}
+
+.back-button {
+  @extend .button;
+  background-color: inherit;
+  border: 1px solid #666;
+}
+
+.action-button {
+  @extend .button;
   background-color: seagreen;
   border: 1px solid darken(seagreen, 10);
   color: #fff;
-  padding: 10px;
-  text-decoration: none;
 }

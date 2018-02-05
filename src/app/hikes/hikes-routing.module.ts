@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HikesComponent } from './hikes/hikes.component';
 import { HikesListComponent } from './hikes-list/hikes-list.component';
 import { HikesFormComponent } from './hikes-form/hikes-form.component';
+import { HikeDetailComponent } from './hike-detail/hike-detail.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,14 @@ const routes: Routes = [
       },
       {
         path: 'new',
+        component: HikesFormComponent
+      },
+      {
+        path: ':id',
+        component: HikeDetailComponent,
+      },
+      {
+        path: ':id/edit',
         component: HikesFormComponent
       }
     ]

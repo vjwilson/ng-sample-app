@@ -8,6 +8,7 @@ import { HikesListComponent } from './hikes-list/hikes-list.component';
 import { HikesService } from './hikes.service';
 import { HikesFormComponent } from './hikes-form/hikes-form.component';
 import { HikesComponent } from './hikes/hikes.component';
+import { HikeDetailComponent } from './hike-detail/hike-detail.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { HikesComponent } from './hikes/hikes.component';
     HikesListComponent,
     HikesFormComponent,
     HikesComponent,
+    HikeDetailComponent,
   ],
   providers: [HikesService],
 })
