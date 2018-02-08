@@ -1,6 +1,7 @@
 <div class="hike-list">
-  <h2>Hiking Trails</h2>
-  <div>
+
+  <div class="hike-list-header">
+    <h2>Hiking Trails</h2>
     <a [routerLink]="['/hikes/new']" class="action-button">Add New Hike</a>
   </div>
   <table class="hike-list-table" *ngIf="hikes && hikes.length">
