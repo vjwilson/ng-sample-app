@@ -1,4 +1,22 @@
+@import 'variables';
+@import 'mixins';
+
 .home {
-  margin: 1em auto;
-  max-width: 1200px;
+  align-items: center;
+  align-content: center;
+  background: url("/assets/images/meadows.png");
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding: $baseline * 10;
+  @include breakpoint(xs) {
+    padding: $baseline * 3;
+  }
+  a {
+    border: 2px solid $black;
+    border-radius: 2px;
+    color: $black;
+    padding: $sub-baseline;
+  }
 }
+

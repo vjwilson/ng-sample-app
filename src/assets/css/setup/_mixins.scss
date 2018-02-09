@@ -1,0 +1,63 @@
+/*
+Use these breakpoint mixins (created around Angular Material breakpoints) for customizing your components/styling.
+To call it in your SCSS:
+.some-class-name {
+   @include breakpoint(xs) {
+      xs styles go here;
+   }
+}
+*/
+
+@mixin breakpoint($point) {
+  @if $point==xs {
+    @media (min-width: 350px) and (max-width: 599px) {
+      @content ;
+    }
+  }
+  @else if $point==xsOnly {
+    @media (max-width: 350px) {
+      @content ;
+    }
+  } // apply to XS and greater
+  @else if $point==gtXs {
+    @media (min-width: 350px) {
+      @content ;
+    }
+  }
+  @else if $point==sm {
+    @media (min-width: 600px) and (max-width: 959px) {
+      @content ;
+    }
+  }
+  @else if $point==smOnly {
+    @media (max-width: 600px) {
+      @content ;
+    }
+  } // apply to SM and greater
+  @else if $point==gtSm {
+    @media (min-width: 600px) {
+      @content ;
+    }
+  }
+  @else if $point==md {
+    @media (min-width: 960px) and (max-width: 1279px) {
+      @content ;
+    }
+  }
+  @else if $point==mdOnly {
+    @media (max-width: 960px) {
+      @content ;
+    }
+  } // apply to MD and greater
+  @else if $point==gtMd {
+    @media (min-width: 960px) {
+      @content ;
+    }
+  }
+  @else if $point==lg {
+    @media (min-width: 1280px) {
+      @content ;
+    }
+  }
+}
+

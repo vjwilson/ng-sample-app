@@ -15,7 +15,7 @@ export class HikesListComponent implements OnInit {
   constructor(
     private router: Router,
     private hikesService: HikesService,
-  ){ }
+  ) { }
 
   ngOnInit() {
     this.hikes = this.hikesService.getHikes();
