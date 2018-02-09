@@ -19,14 +19,14 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "assets/css/styles.scss"
+        "assets/scss/styles.scss"
       ],
       "stylePreprocessorOptions": {
         "includePaths": [
-          "assets/css/base",
-          "assets/css/components",
-          "assets/css/layout",
-          "assets/css/setup"
+          "assets/scss/base",
+          "assets/scss/components",
+          "assets/scss/layout",
+          "assets/scss/setup"
         ]
       },
       "scripts": [],
