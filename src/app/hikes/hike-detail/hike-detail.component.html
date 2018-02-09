@@ -35,6 +35,7 @@
       </div>
     </div>
     <p>{{hike.description}}</p>
+    <a class="action-button" [routerLink]="['/hikes', hike.id, 'edit']">Edit</a>
     <button class="back-button" (click)="onBack()" type="button">Back to Hikes</button>
   </div>
   <div class="hike-detail-sidebar">

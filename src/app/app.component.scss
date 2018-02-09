@@ -13,8 +13,8 @@
     a:visited {
       background-color: $primary;
       color: $white;
-      margin: .5em;
-      padding: .5em 1em;
+      margin: $sub-baseline;
+      padding: $sub-baseline $baseline;
       text-decoration: none;
     }
   }
@@ -22,7 +22,7 @@
 
 .sitelogo {
   height: auto;
-  margin: 0 1em;
+  margin: 0 $baseline;
   width: $baseline * 2;
 }
 

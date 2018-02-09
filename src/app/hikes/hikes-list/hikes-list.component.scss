@@ -1,10 +1,16 @@
 .hike-list {
   margin: 1em auto;
   max-width: 1200px;
+
+  &-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .hike-list-table {
-  border: collapse;
+  border-collapse: collapse;
   width: 100%;
 
   .hike-row:hover {

@@ -1,9 +1,24 @@
-button {
+@import 'variables';
+
+.button {
   border-radius: 2px;
   text-decoration: none;
-  letter-spacing: 1px;
-  font-weight: $base-font-weight;
-  text-transform: capitalize;
-  padding: $sub-baseline;
+  box-shadow: none;
+  font-size: $sub-baseline * 1.5;
+  padding: $sub-baseline $baseline;
+  text-decoration: none;
+}
+
+.back-button {
+  @extend .button;
+  background-color: inherit;
+  border: 1px solid $primary;
+}
+
+.action-button {
+  @extend .button;
+  background-color: $background;
+  border: 1px solid darken($background, 10);
+  color: $white;
 }
 
