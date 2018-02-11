@@ -11,6 +11,7 @@ import { HikesService } from '../hikes.service';
 })
 export class HikesListComponent implements OnInit {
   hikes: Hike[] = [];
+  errorMessage: any;
 
   constructor(
     private router: Router,
@@ -18,7 +19,10 @@ export class HikesListComponent implements OnInit {
   ){ }
 
   ngOnInit() {
-    this.hikes = this.hikesService.getHikes();
+    this.hikesService.getHikes()
+      .subscribe(
+        hikes => this.hikes = hikes,
+        error => this.errorMessage = <any>Error);
   }
 
   onRowClick(hike): void {
