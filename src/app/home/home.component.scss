@@ -2,6 +2,9 @@
 @import 'mixins';
 
 .home {
+  @include breakpoint(xs) {
+    padding: $baseline * 3;
+  }
   align-items: center;
   align-content: center;
   background: url("/assets/images/meadows.png");
@@ -9,9 +12,6 @@
   display: flex;
   flex-direction: column;
   padding: $baseline * 10;
-  @include breakpoint(xs) {
-    padding: $baseline * 3;
-  }
   a {
     border: 2px solid $black;
     border-radius: 2px;
