@@ -24,10 +24,10 @@
       ],
       "stylePreprocessorOptions": {
         "includePaths": [
+          "assets/scss/abstracts",
           "assets/scss/base",
           "assets/scss/components",
-          "assets/scss/layout",
-          "assets/scss/setup"
+          "assets/scss/layout"
         ]
       },
       "scripts": [],
