@@ -8,7 +8,10 @@ import { AuthGuard } from './auth.guard';
   imports: [
     CommonModule
   ],
-  declarations: [StarComponent, AppendMilesPipe],
+  declarations: [
+    StarComponent,
+    AppendMilesPipe,
+  ],
   providers: [AuthGuard],
   exports: [
     StarComponent,

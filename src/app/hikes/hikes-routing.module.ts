@@ -17,19 +17,19 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HikesListComponent
+        component: HikesListComponent,
       },
       {
         path: 'new',
-        component: HikeFormComponent
+        component: HikeFormComponent,
       },
       {
         path: ':id',
-        component: HikeDetailComponent
+        component: HikeDetailComponent,
       },
       {
         path: ':id/edit',
-        component: HikeFormComponent
+        component: HikeFormComponent,
       }
     ]
   },
