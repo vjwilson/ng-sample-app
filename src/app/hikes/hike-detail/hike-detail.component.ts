@@ -9,6 +9,7 @@ import { HikesService } from '../hikes.service';
 })
 export class HikeDetailComponent implements OnInit {
   hike: Hike;
+  errorMessage: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,7 +21,10 @@ export class HikeDetailComponent implements OnInit {
     const param = this.route.snapshot.paramMap.get('id');
     if (param) {
       const id = +param;
-      this.hike = this.hikesService.getHike(id);
+      this.hikesService.getHike(id)
+      .subscribe(
+        hike => this.hike = hike,
+        error => this.errorMessage = <any>error);
     }
   }
 

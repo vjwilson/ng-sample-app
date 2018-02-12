@@ -1,0 +1,53 @@
+{
+  "hikes": [
+  { "id"              : 1,
+    "name"            : "McAlpine Creek Greenway to Campbell Creek Greenway",
+    "description"     : "A moderately trafficked out and back trail located in Charlotte, North Carolina that features a lake. The trail is primarily used for hiking, trail running, and mountain biking and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
+    "difficultyLevel" : "Moderate",
+    "distance"        : 8.3,
+    "elevationGain"   : 108,
+    "routeType"       : "Out and Back",
+    "rating"          : 3.3,
+    "imageUrl"        : "https://cdn-assets.alltrails.com/uploads/photo/image/19051874/extra_large_d4723491da714392d2e3325f6e3f3908.jpg"
+  },
+  { "id"              : 2,
+    "name"            : "Reedy Creek Nature Preserve Trail",
+    "description"     : "A heavily trafficked loop trail located near Charlotte, North Carolina that features beautiful wild flowers and is good for all skill levels. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
+    "difficultyLevel" : "Easy",
+    "distance"        : 3.1,
+    "elevationGain"   : 187,
+    "routeType"       : "Loop",
+    "rating"          : 4.1,
+    "imageUrl"        : "https://cdn-assets.alltrails.com/uploads/photo/image/19280712/extra_large_40d57d08ba9f31c468b79344e901e07c.jpg"
+  },
+  { "id"              : 3,
+    "name"            : "Crowders Mountain State Park Backside Trail",
+    "description"     : "A lightly trafficked out and back trail located near Gastonia, North Carolina that features a great forest setting and is rated as difficult. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
+    "difficultyLevel" : "Hard",
+    "distance"        : 1.9,
+    "elevationGain"   : 666,
+    "routeType"       : "Out and Back",
+    "rating"          : 4.7,
+    "imageUrl"        : "https://cdn-assets.alltrails.com/uploads/photo/image/10065640/extra_large_6f1c0b3bb0f0aab99594125d7df2dc0f.jpg"
+  },
+  { "id"              : 4,
+    "name"            : "Crowders Mountain State Park King Pinnacle Trail",
+    "description"     : "A lightly trafficked out and back trail located near Kings Mountain, North Carolina that features beautiful wild flowers and is rated as difficult. The trail is primarily used for hiking, walking, trail running, and birding and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
+    "difficultyLevel" : "Hard",
+    "distance"        : 3.8,
+    "elevationGain"   : 725,
+    "routeType"       : "Out and Back",
+    "rating"          : 4.5,
+    "imageUrl"        : "https://cdn-assets.alltrails.com/uploads/photo/image/11333463/extra_large_3d491d26fed180c475b4915db5f6893d.jpg"
+  },
+  { "id"              : 5,
+    "name"            : "Morrow Mountain State Park Hattaway Mountain Trail",
+    "description"     : "A loop trail located near Albemarle, North Carolina that features a waterfall and is rated as difficult. The trail is primarily used for hiking and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
+    "difficultyLevel" : "Hard",
+    "distance"        : 3.4,
+    "elevationGain"   : 836,
+    "routeType"       : "Out and Back",
+    "rating"          : 3.9,
+    "imageUrl"        : "https://cdn-assets.alltrails.com/uploads/photo/image/10358069/extra_large_5ae463c8b0adbc69d304b65ec33a9cb2.jpg"
+  }
+]}

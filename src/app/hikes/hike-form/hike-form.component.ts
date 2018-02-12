@@ -11,6 +11,7 @@ import { HikesService } from '../hikes.service';
 export class HikeFormComponent implements OnInit {
   id: any;
   hike: Hike;
+  errorMessage: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,7 +22,10 @@ export class HikeFormComponent implements OnInit {
     const param = this.route.snapshot.paramMap.get('id');
     if (param) {
       this.id = +param;
-      this.hike = this.hikesService.getHike(this.id);
+      this.hikesService.getHike(this.id)
+      .subscribe(
+        hike => this.hike = hike,
+        error => this.errorMessage = <any>error);
     }
   }
 
