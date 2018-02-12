@@ -1,36 +1,21 @@
-html {
-  box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
-}
+@import 'variables';
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-.layout {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  text-align: center;
-
-  &-header {
-    align-items: center;
-    display: flex;
-  }
+.layout-header {
+  align-items: center;
+  display: flex;
 }
 
 .navbar {
   list-style-type: none;
-
   li {
     display: inline-block;
-
+    margin: $sub-baseline;
     a:link,
     a:visited {
-      background-color: #666;
-      color: #fff;
-      margin: .5em;
-      padding: .5em 1em;
+      background-color: $primary;
+      color: $white;
+      margin: $sub-baseline;
+      padding: $sub-baseline $baseline;
       text-decoration: none;
     }
   }
@@ -38,6 +23,7 @@ html {
 
 .sitelogo {
   height: auto;
-  margin: 0 1em;
-  width: 32px;
+  margin: 0 $baseline;
+  width: $baseline * 2;
 }
+
