@@ -9,6 +9,7 @@
   list-style-type: none;
   li {
     display: inline-block;
+    margin: $sub-baseline;
     a:link,
     a:visited {
       background-color: $primary;
