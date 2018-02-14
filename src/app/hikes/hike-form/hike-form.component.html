@@ -1,3 +1,74 @@
 <h1 *ngIf="id">Edit Hike</h1>
 <h1 *ngIf="!id">Add Hike</h1>
-<p>Coming soon!</p>
+
+<form class="hike-form" *ngIf="hike">
+  <fieldset>
+    <legend>Basic Information</legend>
+
+    <div class="field-group">
+      <label for="hike-name">Name</label>
+      <input id="hike-name" name="hike-name" type="text" [(ngModel)]="hike.name" />
+    </div>
+
+    <div class="field-group">
+      <label for="hike-image">Image</label>
+      <input id="hike-image" name="hike-image" type="file" value="" />
+    </div>
+
+    <div class="field-group">
+      <label for="hike-description">Description</label>
+      <textarea
+        id="hike-description"
+        name="hike-description"
+        rows="4"
+        [(ngModel)]="hike.description"></textarea>
+    </div>
+
+    <div class="radio-group">
+      <!-- Added labelled by here for route type-->
+      <label for="hike-route-out">Out and Back</label>
+      <input
+        id="hike-route-out"
+        name="hike-route"
+        type="radio"
+        value="out-and-back"
+        [(ngModel)]="hike.routeType" />
+
+      <label for="hike-route-loop">Loop</label>
+      <input
+        id="hike-route-loop"
+        name="hike-route"
+        value="loop"
+        type="radio"
+        [(ngModel)]="hike.routeType" />
+
+      <label for="hike-route-point">Point to Point</label>
+      <input
+        id="hike-route-point"
+        name="hike-route"
+        type="radio"
+        value="point-to-point"
+        [(ngModel)]="hike.routeType" />
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Additional Information</legend>
+
+    <div class="field-group">
+      <label for="hike-distance">Distance</label>
+      <input id="hike-distance" name="hike-distance" type="number" [(ngModel)]="hike.distance" />
+    </div>
+
+    <div class="field-group">
+      <label for="hike-elevation">Distance</label>
+      <input id="hike-elevation" name="hike-elevation" type="number" [(ngModel)]="hike.elevationGain" />
+    </div>
+
+    <div class="field-group">
+      <label for="hike-difficulty">Difficulty Level</label>
+      <input id="hike-difficulty" name="hike-difficulty" type="range" min="1" max="5" [(ngModel)]="hike.difficultyLevel" />
+    </div>
+  </fieldset>
+  <button class="action-button" type="submit">Submit</button>
+</form>
