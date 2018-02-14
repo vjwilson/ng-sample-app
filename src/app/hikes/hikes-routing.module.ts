@@ -11,9 +11,6 @@ const routes: Routes = [
   {
     path: 'hikes',
     component: HikesComponent,
-    canActivate: [
-      AuthGuard
-    ],
     children: [
       {
         path: '',
@@ -22,6 +19,9 @@ const routes: Routes = [
       {
         path: 'new',
         component: HikeFormComponent,
+        canActivate: [
+          AuthGuard
+        ],
       },
       {
         path: ':id',
@@ -30,6 +30,9 @@ const routes: Routes = [
       {
         path: ':id/edit',
         component: HikeFormComponent,
+        canActivate: [
+          AuthGuard
+        ],
       }
     ]
   },
