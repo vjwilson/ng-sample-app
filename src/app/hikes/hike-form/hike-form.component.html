@@ -4,15 +4,13 @@
 <form class="hike-form" *ngIf="hike">
   <fieldset>
     <legend>Basic Information</legend>
-
     <div class="field-group">
       <label for="hike-name">Name</label>
-      <input id="hike-name" name="hike-name" type="text" [(ngModel)]="hike.name" />
-    </div>
-
-    <div class="field-group">
-      <label for="hike-image">Image</label>
-      <input id="hike-image" name="hike-image" type="file" value="" />
+      <input
+        id="hike-name"
+        name="hike-name"
+        type="text"
+        [(ngModel)]="hike.name" />
     </div>
 
     <div class="field-group">
@@ -25,7 +23,6 @@
     </div>
 
     <div class="radio-group">
-      <!-- Added labelled by here for route type-->
       <div id="hike-route">Hike Route</div>
       <input
         aria-labelledby="hike-route"
@@ -58,20 +55,33 @@
 
   <fieldset>
     <legend>Additional Information</legend>
-
     <div class="field-group">
       <label for="hike-distance">Distance</label>
-      <input id="hike-distance" name="hike-distance" type="number" [(ngModel)]="hike.distance" />
+      <input
+        id="hike-distance"
+        name="hike-distance"
+        type="number"
+        [(ngModel)]="hike.distance" />
     </div>
 
     <div class="field-group">
       <label for="hike-elevation">Elevation Gain</label>
-      <input id="hike-elevation" name="hike-elevation" type="number" [(ngModel)]="hike.elevationGain" />
+      <input
+        id="hike-elevation"
+        name="hike-elevation"
+        type="number"
+        [(ngModel)]="hike.elevationGain" />
     </div>
 
     <div class="field-group">
       <label for="hike-difficulty">Difficulty Level</label>
-      <input id="hike-difficulty" name="hike-difficulty" type="range" min="1" max="5" [(ngModel)]="hike.difficultyLevel" />
+      <input
+        id="hike-difficulty"
+        max="5"
+        min="1"
+        name="hike-difficulty"
+        type="range"
+        [(ngModel)]="hike.difficultyLevel" />
     </div>
   </fieldset>
   <button class="action-button" type="submit">Submit</button>

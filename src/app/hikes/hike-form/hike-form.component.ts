@@ -23,7 +23,6 @@ export class HikeFormComponent implements OnInit {
     if (param) {
       this.getHike(param);
     } else {
-      // do we have to do it this way or is there an easier way of initializing ?
       this.hike = {
         id: null,
         name: null,
@@ -45,5 +44,4 @@ export class HikeFormComponent implements OnInit {
       hike => this.hike = hike,
       error => this.errorMessage = <any>error);
   }
-
 }
