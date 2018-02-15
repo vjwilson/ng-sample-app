@@ -1,0 +1,9 @@
+<span [ngSwitch]="control.controlType" [formGroup]="form">
+    <div class="field-group" *ngSwitchCase="'text'">
+      <label [for]="control.label">{{control.label}}</label>
+      <input
+        [id]="control.label"
+        [formControlName]="control.label"
+        [type]="control.controlType" />
+    </div>
+</span>

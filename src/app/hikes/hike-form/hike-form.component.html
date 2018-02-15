@@ -1,19 +1,17 @@
 <h1 *ngIf="id">Edit Hike</h1>
 <h1 *ngIf="!id">Add Hike</h1>
 
-<form class="hike-form" *ngIf="hike">
+<form class="hike-form" *ngIf="hike" [formGroup]="form">
   <fieldset>
     <legend>Basic Information</legend>
-    <div class="field-group">
-      <label for="hike-name">Name</label>
-      <input
-        id="hike-name"
-        name="hike-name"
-        type="text"
-        [(ngModel)]="hike.name" />
-    </div>
+    <ng-container *ngFor="let control of controls">
+      <app-dynamic-form-control
+        [control]="control"
+        [form]="form"></app-dynamic-form-control>
+    </ng-container>
+  </fieldset>
 
-    <div class="field-group">
+    <!-- <div class="field-group">
       <label for="hike-description">Description</label>
       <textarea
         id="hike-description"
@@ -83,6 +81,6 @@
         type="range"
         [(ngModel)]="hike.difficultyLevel" />
     </div>
-  </fieldset>
+  </fieldset> -->
   <button class="action-button" type="submit">Submit</button>
 </form>
