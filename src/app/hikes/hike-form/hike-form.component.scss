@@ -8,13 +8,23 @@
 
   fieldset {
     border: none;
+    margin: $baseline 0;
     text-align: left;
   }
 
-  input,
-  textarea {
-    padding: $sub-baseline;
+  legend {
+    border-bottom: 1px solid $primary;
+    font-weight: 700;
     width: 100%;
+  }
+
+  .field-group {
+    input,
+    textarea {
+      margin: $sub-baseline 0;
+      padding: $sub-baseline;
+      width: 100%;
+    }
   }
 
 }

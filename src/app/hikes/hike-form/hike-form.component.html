@@ -26,29 +26,33 @@
 
     <div class="radio-group">
       <!-- Added labelled by here for route type-->
-      <label for="hike-route-out">Out and Back</label>
+      <div id="hike-route">Hike Route</div>
       <input
+        aria-labelledby="hike-route"
         id="hike-route-out"
         name="hike-route"
         type="radio"
         value="out-and-back"
         [(ngModel)]="hike.routeType" />
+      <label for="hike-route-out">Out and Back</label>
 
-      <label for="hike-route-loop">Loop</label>
       <input
+        aria-labelledby="hike-route"
         id="hike-route-loop"
         name="hike-route"
         value="loop"
         type="radio"
         [(ngModel)]="hike.routeType" />
+      <label for="hike-route-loop">Loop</label>
 
-      <label for="hike-route-point">Point to Point</label>
       <input
+        aria-labelledby="hike-route"
         id="hike-route-point"
         name="hike-route"
         type="radio"
         value="point-to-point"
         [(ngModel)]="hike.routeType" />
+      <label for="hike-route-point">Point to Point</label>
     </div>
   </fieldset>
 
@@ -61,7 +65,7 @@
     </div>
 
     <div class="field-group">
-      <label for="hike-elevation">Distance</label>
+      <label for="hike-elevation">Elevation Gain</label>
       <input id="hike-elevation" name="hike-elevation" type="number" [(ngModel)]="hike.elevationGain" />
     </div>
 
