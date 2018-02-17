@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Hike } from '../hike';
 import { HikesService } from '../hikes.service';
+import { StarComponent } from '../../shared/star/star.component';
 
 @Component({
   selector: 'app-edit-hike',
@@ -9,6 +10,7 @@ import { HikesService } from '../hikes.service';
   styleUrls: ['./edit-hike.component.scss']
 })
 export class EditHikeComponent implements OnInit {
+  @ViewChild(StarComponent) private starComponent: StarComponent;
   hike: Hike;
   errorMessage: any;
   hikeId: string;
@@ -38,7 +40,16 @@ export class EditHikeComponent implements OnInit {
     });
   }
 
-  onRateIncrease(isIncrease: boolean) {
+  onRatingChange(isIncrease: boolean) {
+    this.updateRating(isIncrease);
+  }
+
+  onChangeRatingFromParent(isIncrease: boolean) {
+    this.starComponent.updateStars();
+    this.updateRating(isIncrease);
+  }
+
+  updateRating(isIncrease: boolean) {
     if (isIncrease) {
       if (this.hike.rating < 5) {
         this.hike.rating++;

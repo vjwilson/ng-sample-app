@@ -3,7 +3,8 @@ import {
   Input,
   Output,
   EventEmitter,
-  OnChanges
+  OnChanges,
+  OnInit
 } from '@angular/core';
 
 @Component({
@@ -11,23 +12,27 @@ import {
   templateUrl: './star.component.html',
   styleUrls: ['./star.component.scss']
 })
-export class StarComponent implements OnChanges {
+export class StarComponent implements OnInit, OnChanges {
   @Input() rating: number;
   @Input() isEdit: boolean = false;
-  @Output() onRatingIncrease: EventEmitter<boolean> = new EventEmitter();
+  @Output() onRatingChange: EventEmitter<boolean> = new EventEmitter();
 
   starColor: string[] = [];
 
   constructor() {}
 
-  ngOnChanges() {
+  ngOnInit(): void {
+    this.updateStars();
+  }
+
+  ngOnChanges(): void {
     this.updateStars();
   }
 
   onChangeRating(isIncrease: boolean) {
     isIncrease
-      ? this.onRatingIncrease.emit(true)
-      : this.onRatingIncrease.emit(false);
+      ? this.onRatingChange.emit(true)
+      : this.onRatingChange.emit(false);
   }
 
   updateStars() {

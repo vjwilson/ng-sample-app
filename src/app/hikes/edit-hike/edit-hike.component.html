@@ -30,11 +30,19 @@
         <span class="stat-label">Rating</span>
         <span class="star-column">
           {{hike.rating}}
-          <app-star [rating]="hike.rating" [isEdit]="true" (onRatingIncrease)="onRateIncrease($event)"></app-star>
+          <app-star [rating]="hike.rating" [isEdit]="true" (onRatingChange)="onRatingChange($event)"></app-star>
         </span>
       </div>
     </div>
     <p>{{hike.description}}</p>
+    <div>
+      <p>
+        <strong>Change Rating</strong>
+      </p>
+      <button type="button" class="button" (click)="onChangeRatingFromParent(false)">-</button>
+      <button type="button" class="button" (click)="onChangeRatingFromParent(true)">+</button>
+    </div>
+    <br>
     <button class="back-button" (click)="onBack()" type="button">Back to Hike</button>
   </div>
   <div class="hike-detail-sidebar">
