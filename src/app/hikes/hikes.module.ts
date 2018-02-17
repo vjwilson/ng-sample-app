@@ -11,17 +11,13 @@ import { HikesComponent } from './hikes/hikes.component';
 import { HikeDetailComponent } from './hike-detail/hike-detail.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    SharedModule,
-    HikesRoutingModule,
-  ],
+  imports: [CommonModule, SharedModule, HikesRoutingModule],
   declarations: [
     HikesListComponent,
     HikeFormComponent,
     HikesComponent,
-    HikeDetailComponent,
+    HikeDetailComponent
   ],
-  providers: [HikesService],
+  providers: [HikesService]
 })
-export class HikesModule { }
+export class HikesModule {}

@@ -29,14 +29,13 @@
       <div>
         <span class="stat-label">Rating</span>
         <span class="star-column">
-          <app-star [rating]="hike.rating"></app-star>
           {{hike.rating}}
+          <app-star [rating]="hike.rating" [isEdit]="true" (onRatingIncrease)="onRateIncrease($event)"></app-star>
         </span>
       </div>
     </div>
     <p>{{hike.description}}</p>
-    <a class="action-button" [routerLink]="['/hikes', hike.id, 'edit']">Edit</a>
-    <button class="back-button" (click)="onBack()" type="button">Back to Hikes</button>
+    <button class="back-button" (click)="onBack()" type="button">Back to Hike</button>
   </div>
   <div class="hike-detail-sidebar">
     <img class="hike-detail-image" [src]="hike.imageUrl" [alt]="hike.name" />

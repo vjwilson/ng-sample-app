@@ -5,3 +5,8 @@
     float: left;
   }
 }
+
+:host {
+  display: flex;
+  flex-direction: column;
+}

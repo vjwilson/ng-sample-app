@@ -14,32 +14,32 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HikesListComponent,
+        component: HikesListComponent
       },
       {
         path: 'new',
         component: HikeFormComponent,
-        canActivate: [
-          AuthGuard
-        ],
+        canActivate: [AuthGuard]
       },
       {
         path: ':id',
-        component: HikeDetailComponent,
+        component: HikeDetailComponent
       },
+      // {
+      //   path: ':id/edit',
+      //   component: HikeFormComponent,
+      //   canActivate: [AuthGuard]
+      // },
       {
-        path: ':id/edit',
-        component: HikeFormComponent,
-        canActivate: [
-          AuthGuard
-        ],
+        path: ':id',
+        loadChildren: './edit-hike/edit-hike.module#EditHikeModule'
       }
     ]
-  },
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HikesRoutingModule { }
+export class HikesRoutingModule {}

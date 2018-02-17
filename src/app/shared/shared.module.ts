@@ -5,17 +5,9 @@ import { AppendMilesPipe } from './append-miles.pipe';
 import { AuthGuard } from './auth.guard';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [
-    StarComponent,
-    AppendMilesPipe,
-  ],
+  imports: [CommonModule],
+  declarations: [StarComponent, AppendMilesPipe],
   providers: [AuthGuard],
-  exports: [
-    StarComponent,
-    AppendMilesPipe,
-  ],
+  exports: [CommonModule, StarComponent, AppendMilesPipe]
 })
-export class SharedModule { }
+export class SharedModule {}
