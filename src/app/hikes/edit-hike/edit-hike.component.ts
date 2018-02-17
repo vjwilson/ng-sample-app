@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Hike } from '../hike';
 import { HikesService } from '../hikes.service';
 import { StarComponent } from '../../shared/star/star.component';
+import { RatingService } from '../../shared/rating.service';
 
 @Component({
   selector: 'app-edit-hike',
@@ -18,7 +19,8 @@ export class EditHikeComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private hikesService: HikesService
+    private hikesService: HikesService,
+    private ratingService: RatingService
   ) {}
 
   ngOnInit() {
@@ -40,13 +42,18 @@ export class EditHikeComponent implements OnInit {
     });
   }
 
-  onRatingChange(isIncrease: boolean) {
+  onChangeRatingFromChild(isIncrease: boolean) {
     this.updateRating(isIncrease);
   }
 
   onChangeRatingFromParent(isIncrease: boolean) {
-    this.starComponent.updateStars();
     this.updateRating(isIncrease);
+    this.starComponent.updateStars(this.hike.rating);
+  }
+
+  onChangeRatingViaService(isIncrease: boolean) {
+    this.updateRating(isIncrease);
+    this.ratingService.changeRating(this.hike.rating);
   }
 
   updateRating(isIncrease: boolean) {

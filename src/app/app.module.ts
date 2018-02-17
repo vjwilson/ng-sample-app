@@ -11,21 +11,17 @@ import { HikesModule } from './hikes/hikes.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-  ],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
     HikesModule,
-    SharedModule,
+    SharedModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

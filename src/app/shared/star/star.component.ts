@@ -4,29 +4,44 @@ import {
   Output,
   EventEmitter,
   OnChanges,
-  OnInit
+  OnInit,
+  OnDestroy
 } from '@angular/core';
+import { RatingService } from '../rating.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-star',
   templateUrl: './star.component.html',
   styleUrls: ['./star.component.scss']
 })
-export class StarComponent implements OnInit, OnChanges {
+export class StarComponent implements OnInit, OnChanges, OnDestroy {
   @Input() rating: number;
   @Input() isEdit: boolean = false;
   @Output() onRatingChange: EventEmitter<boolean> = new EventEmitter();
 
   starColor: string[] = [];
 
-  constructor() {}
+  subscription: Subscription;
+
+  constructor(private ratingService: RatingService) {}
 
   ngOnInit(): void {
-    this.updateStars();
+    this.updateStars(this.rating);
+    this.subscription = this.ratingService.ratingChanged$.subscribe(
+      (rating) => {
+        this.updateStars(rating);
+      }
+    );
   }
 
   ngOnChanges(): void {
-    this.updateStars();
+    this.updateStars(this.rating);
+  }
+
+  ngOnDestroy() {
+    // prevent memory leak when component destroyed
+    this.subscription.unsubscribe();
   }
 
   onChangeRating(isIncrease: boolean) {
@@ -35,8 +50,8 @@ export class StarComponent implements OnInit, OnChanges {
       : this.onRatingChange.emit(false);
   }
 
-  updateStars() {
-    const starRating: number = Math.ceil(this.rating);
+  updateStars(rating: number) {
+    const starRating: number = Math.ceil(rating);
 
     for (let i = 0; i < 5; i++) {
       if (starRating > i + 1) {
