@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { FormControlsBase } from './../form-controls-types/form-controls-base';
 
 @Component({
   selector: 'app-dynamic-form-control',
@@ -7,12 +8,12 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./dynamic-form-control.component.scss']
 })
 export class DynamicFormControlComponent implements OnInit {
-  @Input() control: FormControl;
+  @Input() control: FormControlsBase<any>;
   @Input() form: FormGroup;
+  @Input() showErrors: Boolean;
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }

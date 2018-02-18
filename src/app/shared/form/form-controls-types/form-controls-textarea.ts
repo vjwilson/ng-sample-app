@@ -1,7 +1,7 @@
 import { FormControlsBase } from './form-controls-base';
 
-export class FormControlsRadio extends FormControlsBase<any> {
-  controlType = 'radio';
+export class FormControlsTextarea extends FormControlsBase<any> {
+  controlType = 'textarea';
   type: string;
 
   constructor(options: {} = {}) {

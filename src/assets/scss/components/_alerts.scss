@@ -1,0 +1,13 @@
+@import 'variables';
+
+.alert {
+  padding: $sub-baseline;
+  margin: $sub-baseline;
+}
+
+.alert-danger {
+  @extend .alert;
+  background-color: lighten($danger, 70);
+  border: 1px solid $danger;
+  color: $danger;
+}

@@ -6,7 +6,7 @@ import { HikesService } from '../hikes.service';
 import { FormGroup } from '@angular/forms';
 import { FormControlsBase } from './../../shared/form/form-controls-types/form-controls-base';
 import { FormControlsText } from './../../shared/form/form-controls-types/form-controls-text';
-import { FormControlsRadio } from './../../shared/form/form-controls-types/form-controls-radio';
+import { FormControlsTextarea } from './../../shared/form/form-controls-types/form-controls-textarea';
 import { FormControlsService } from './../../shared/form/form-controls.service';
 
 @Component({
@@ -20,6 +20,7 @@ export class HikeFormComponent implements OnInit {
   form: FormGroup;
   hike: Hike;
   errorMessage: any;
+  showErrors: Boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -55,22 +56,10 @@ export class HikeFormComponent implements OnInit {
         value: this.hike.name,
         required: true
       }),
-      new FormControlsRadio({
-        key: 'routeType',
-        label: 'Hike Route',
-        value: this.hike.routeType,
-        required: true
-      }),
-      new FormControlsRadio({
-        key: 'routeType',
-        label: 'Loop',
-        value: this.hike.routeType,
-        required: true
-      }),
-      new FormControlsRadio({
-        key: 'routeType',
-        label: 'Point to Point',
-        value: this.hike.routeType,
+      new FormControlsTextarea({
+        key: 'description',
+        label: 'Description',
+        value: this.hike.description,
         required: true
       }),
     ];
@@ -87,5 +76,17 @@ export class HikeFormComponent implements OnInit {
         this.initializeForm();
       },
       error => this.errorMessage = <any>error);
+  }
+
+  onSubmit() {
+    this.showErrors = false;
+
+    if (this.form.invalid) {
+      console.log('invalid!', this.form);
+      this.showErrors = true;
+      return;
+    }
+
+    console.log('submitted hike is', this.form);
   }
 }

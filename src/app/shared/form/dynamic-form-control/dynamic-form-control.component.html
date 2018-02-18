@@ -1,17 +1,18 @@
 <span [ngSwitch]="control.controlType" [formGroup]="form" *ngIf="control">
+    <label [for]="control.label">{{control.label}}:</label>
     <div class="field-group" *ngSwitchCase="'text'">
-      <label [for]="control.name">{{control.label}}</label>
       <input
-        [id]="control.name"
+        [id]="control.label"
         [formControlName]="control.key"
         [type]="control.controlType" />
     </div>
-    <div class="field-group" *ngSwitchCase="'radio'">
-        <input
-          [id]="control.name"
-          [formControlName]="control.key"
-          [type]="control.controlType"
-          [value]="control.value" />
-        <label [for]="control.name">{{control.label}}</label>
+    <div class="field-group" *ngSwitchCase="'textarea'">
+      <textarea
+        [id]="control.label"
+        [formControlName]="control.key"
+        rows="4"></textarea>
     </div>
 </span>
+<div class="alert-danger" *ngIf="showErrors && form.controls[control.key].invalid">
+  <p>This field is required</p>
+</div>
