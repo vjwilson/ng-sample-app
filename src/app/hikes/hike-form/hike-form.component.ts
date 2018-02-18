@@ -6,6 +6,7 @@ import { HikesService } from '../hikes.service';
 import { FormGroup } from '@angular/forms';
 import { FormControlsBase } from './../../shared/form/form-controls-types/form-controls-base';
 import { FormControlsText } from './../../shared/form/form-controls-types/form-controls-text';
+import { FormControlsRadio } from './../../shared/form/form-controls-types/form-controls-radio';
 import { FormControlsService } from './../../shared/form/form-controls.service';
 
 @Component({
@@ -15,6 +16,7 @@ import { FormControlsService } from './../../shared/form/form-controls.service';
 })
 export class HikeFormComponent implements OnInit {
   id: number;
+  controls: any;
   form: FormGroup;
   hike: Hike;
   errorMessage: any;
@@ -46,16 +48,34 @@ export class HikeFormComponent implements OnInit {
   }
 
   initializeForm() {
-    let controls: FormControlsBase<any>[] = [
+    this.controls = [
       new FormControlsText({
         key: 'Name',
         label: 'Name',
         value: this.hike.name,
         required: true
       }),
+      new FormControlsRadio({
+        key: 'routeType',
+        label: 'Hike Route',
+        value: this.hike.routeType,
+        required: true
+      }),
+      new FormControlsRadio({
+        key: 'routeType',
+        label: 'Loop',
+        value: this.hike.routeType,
+        required: true
+      }),
+      new FormControlsRadio({
+        key: 'routeType',
+        label: 'Point to Point',
+        value: this.hike.routeType,
+        required: true
+      }),
     ];
 
-    this.form = this.formControlsService.buildForm(controls);
+    this.form = this.formControlsService.buildForm(this.controls);
   }
 
   getHike(param) {

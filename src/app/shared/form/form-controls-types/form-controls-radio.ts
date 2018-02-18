@@ -1,6 +1,6 @@
 import { FormControlsBase } from './form-controls-base';
 
-export class FormControlsRadio extends FormControlsBase<string> {
+export class FormControlsRadio extends FormControlsBase<any> {
   controlType = 'radio';
   type: string;
 

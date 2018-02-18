@@ -5,6 +5,7 @@ export class FormControlsBase<T>{
   required: boolean;
   order: number;
   controlType: string;
+  name: string;
 
   constructor(options: {
       value?: T,
@@ -12,7 +13,8 @@ export class FormControlsBase<T>{
       label?: string,
       required?: boolean,
       order?: number,
-      controlType?: string
+      controlType?: string,
+      name?: string,
     } = {}) {
     this.value = options.value;
     this.key = options.key || '';
@@ -20,5 +22,6 @@ export class FormControlsBase<T>{
     this.required = !!options.required;
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || '';
+    this.name = options.name || '';
   }
 }

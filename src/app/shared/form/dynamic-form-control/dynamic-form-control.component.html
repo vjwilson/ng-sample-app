@@ -1,9 +1,17 @@
-<span [ngSwitch]="control.controlType" [formGroup]="form">
+<span [ngSwitch]="control.controlType" [formGroup]="form" *ngIf="control">
     <div class="field-group" *ngSwitchCase="'text'">
-      <label [for]="control.label">{{control.label}}</label>
+      <label [for]="control.name">{{control.label}}</label>
       <input
-        [id]="control.label"
-        [formControlName]="control.label"
+        [id]="control.name"
+        [formControlName]="control.key"
         [type]="control.controlType" />
+    </div>
+    <div class="field-group" *ngSwitchCase="'radio'">
+        <input
+          [id]="control.name"
+          [formControlName]="control.key"
+          [type]="control.controlType"
+          [value]="control.value" />
+        <label [for]="control.name">{{control.label}}</label>
     </div>
 </span>
