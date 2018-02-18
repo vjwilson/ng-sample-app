@@ -44,4 +44,8 @@ export class HikeFormComponent implements OnInit {
       hike => this.hike = hike,
       error => this.errorMessage = <any>error);
   }
+
+  onSubmit() {
+    console.log('hike is now', this.hike);
+  }
 }
