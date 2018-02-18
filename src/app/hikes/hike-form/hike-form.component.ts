@@ -16,7 +16,7 @@ import { FormControlsService } from './../../shared/form/form-controls.service';
 })
 export class HikeFormComponent implements OnInit {
   id: number;
-  controls: any;
+  controls: FormControlsBase<any>[];
   form: FormGroup;
   hike: Hike;
   errorMessage: any;
@@ -51,7 +51,7 @@ export class HikeFormComponent implements OnInit {
   initializeForm() {
     this.controls = [
       new FormControlsText({
-        key: 'Name',
+        key: 'name',
         label: 'Name',
         value: this.hike.name,
         required: true

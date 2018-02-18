@@ -4,6 +4,7 @@ import { StarComponent } from './star/star.component';
 import { FormModule } from './form/form.module';
 import { AppendMilesPipe } from './append-miles.pipe';
 import { AuthGuard } from './auth.guard';
+import { DynamicFormControlComponent } from './form/dynamic-form-control/dynamic-form-control.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { AuthGuard } from './auth.guard';
   exports: [
     StarComponent,
     AppendMilesPipe,
+    DynamicFormControlComponent
   ],
 })
 export class SharedModule { }
