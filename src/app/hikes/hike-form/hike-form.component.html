@@ -1,6 +1,5 @@
 <h1 *ngIf="id">Edit Hike</h1>
 <h1 *ngIf="!id">Add Hike</h1>
-
 <form class="hike-form" *ngIf="hike" [formGroup]="form" (ngSubmit)="onSubmit()">
   <fieldset>
     <legend>Basic Information</legend>
