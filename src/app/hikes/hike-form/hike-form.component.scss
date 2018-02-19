@@ -1,0 +1,30 @@
+@import 'variables';
+
+.hike-form {
+  background-color: lighten($primary, 50);
+  margin: 0 auto;
+  padding: $baseline;
+  width: 30%;
+
+  fieldset {
+    border: none;
+    margin: $baseline 0;
+    text-align: left;
+  }
+
+  legend {
+    border-bottom: 1px solid $primary;
+    font-weight: 700;
+    width: 100%;
+  }
+
+  .field-group {
+    input,
+    textarea {
+      margin: $sub-baseline 0;
+      padding: $sub-baseline;
+      width: 100%;
+    }
+  }
+
+}

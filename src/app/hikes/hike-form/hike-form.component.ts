@@ -21,12 +21,31 @@ export class HikeFormComponent implements OnInit {
   ngOnInit() {
     const param = this.route.snapshot.paramMap.get('id');
     if (param) {
-      this.id = +param;
-      this.hikesService.getHike(this.id)
-      .subscribe(
-        hike => this.hike = hike,
-        error => this.errorMessage = <any>error);
+      this.getHike(param);
+    } else {
+      this.hike = {
+        id: null,
+        name: null,
+        description: null,
+        difficultyLevel: null,
+        distance: null,
+        elevationGain: null,
+        routeType: null,
+        rating: null,
+        imageUrl: null
+      };
     }
   }
 
+  getHike(param) {
+    this.id = +param;
+    this.hikesService.getHike(this.id)
+    .subscribe(
+      hike => this.hike = hike,
+      error => this.errorMessage = <any>error);
+  }
+
+  onSubmit() {
+    console.log('hike is now', this.hike);
+  }
 }
