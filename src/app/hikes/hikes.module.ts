@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { SharedModule } from '../shared/shared.module';
 import { HikesRoutingModule } from './hikes-routing.module';
@@ -11,7 +10,7 @@ import { HikesComponent } from './hikes/hikes.component';
 import { HikeDetailComponent } from './hike-detail/hike-detail.component';
 
 @NgModule({
-  imports: [CommonModule, SharedModule, HikesRoutingModule],
+  imports: [SharedModule, HikesRoutingModule],
   declarations: [
     HikesListComponent,
     HikeFormComponent,
