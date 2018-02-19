@@ -51,10 +51,10 @@ export class StarComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   updateStars(rating: number) {
-    const starRating: number = Math.ceil(rating);
+    const starRating: number = Math.floor(rating);
 
     for (let i = 0; i < 5; i++) {
-      if (starRating > i + 1) {
+      if (starRating > i) {
         this.starColor[i] = '#ffd055';
       } else {
         this.starColor[i] = '#d8d8d8';
