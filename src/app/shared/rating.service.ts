@@ -3,15 +3,15 @@ import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class RatingService {
-  // Observable string sources
+  // Observable source
   private ratingChangedSource = new Subject<number>();
 
-  // Observable string streams
+  // Observable stream
   ratingChanged$ = this.ratingChangedSource.asObservable();
 
   constructor() {}
 
-  // Service message commands
+  // Service message command
   changeRating(rating: number) {
     this.ratingChangedSource.next(rating);
   }
