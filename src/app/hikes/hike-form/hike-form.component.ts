@@ -3,19 +3,29 @@ import { ActivatedRoute } from '@angular/router';
 import { Hike } from '../hike';
 import { HikesService } from '../hikes.service';
 
+import { FormGroup } from '@angular/forms';
+import { FormControlsBase } from './../../shared/form/form-controls-types/form-controls-base';
+import { FormControlsText } from './../../shared/form/form-controls-types/form-controls-text';
+import { FormControlsTextarea } from './../../shared/form/form-controls-types/form-controls-textarea';
+import { FormControlsService } from './../../shared/form/form-controls.service';
+
 @Component({
   selector: 'app-hike-form',
   templateUrl: './hike-form.component.html',
   styleUrls: ['./hike-form.component.scss']
 })
 export class HikeFormComponent implements OnInit {
-  id: any;
+  id: number;
+  controls: FormControlsBase<any>[];
+  form: FormGroup;
   hike: Hike;
   errorMessage: any;
+  showErrors: Boolean = false;
 
   constructor(
     private route: ActivatedRoute,
-    private hikesService: HikesService
+    private formControlsService: FormControlsService,
+    private hikesService: HikesService,
   ) {}
 
   ngOnInit() {
@@ -34,18 +44,49 @@ export class HikeFormComponent implements OnInit {
         rating: null,
         imageUrl: null
       };
+      this.initializeForm();
     }
+  }
+
+  initializeForm() {
+    this.controls = [
+      new FormControlsText({
+        key: 'name',
+        label: 'Name',
+        value: this.hike.name,
+        required: true
+      }),
+      new FormControlsTextarea({
+        key: 'description',
+        label: 'Description',
+        value: this.hike.description,
+        required: true
+      }),
+    ];
+
+    this.form = this.formControlsService.buildForm(this.controls);
   }
 
   getHike(param) {
     this.id = +param;
     this.hikesService.getHike(this.id)
     .subscribe(
-      hike => this.hike = hike,
+      hike => {
+        this.hike = hike;
+        this.initializeForm();
+      },
       error => this.errorMessage = <any>error);
   }
 
   onSubmit() {
-    console.log('hike is now', this.hike);
+    this.showErrors = false;
+
+    if (this.form.invalid) {
+      console.log('invalid!', this.form);
+      this.showErrors = true;
+      return;
+    }
+
+    console.log('submitted hike is', this.form);
   }
 }
