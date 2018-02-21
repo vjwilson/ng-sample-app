@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npm-run-all --parallel mock:api serve",
-    "serve": "ng serve",
+    "serve": "ng serve -o",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",

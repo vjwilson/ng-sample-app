@@ -4,7 +4,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Because this teaching app doesn't have a real API to use, you have to run the mock API that we have set up in this same repo.
+
+To do that, instead of running it the way you normally run an Angular CLI app, run the following command, which will bootstrap the mock API and then run `ng serve` for you.
+
+```
+npm start
+```
+
+(Without a mock API, the normal way is to run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.)
+
+The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
